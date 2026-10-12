@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header_inner">
+        <h1 class="title header_title">Мое портфолио</h1>
+        <nav class="menu">
+          <button class="menu_button">
+            <span class="menu_button_line"></span>
+            <span class="menu_button_line"></span>
+          </button>
+          <ul class="menu_list">
+            <li class="menu_item">
+              <a href="#about">О себе</a>
+            </li>
+            <li class="menu_item">
+              <a href="#skills">Список навыков</a>
+            </li>
+            <li class="menu_item">
+              <a href="#work">Опыт работы</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="contact">
+          <!-- админ телеграм -->
+          <li class="contact_item" id="contact-telegram"></li>
+          <!-- админ телефон -->
+          <li class="contact_item what" id="contact-phone"></li>
+        </ul>
+      </div>
+      <a href="/admin/admin.html" class="admin-link">Админ-панель</a>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <section class="about" id="about">
+        <h2 class="title sec_title">О себе</h2>
+        <div class="about_inner tiny_mce" id="about-content">
+          <!-- адми о себе -->
+        </div>
+      </section>
+      <section class="skills" id="skills">
+        <h2 class="title sec_title">Список навыков</h2>
+        <ul class="skills_list" id="skills-content">
+          <!-- админ список навыков в виде тегов -->
+        </ul>
+      </section>
+      <section class="work" id="work">
+        <h2 class="title sec_title">Опыт работы</h2>
+        <div class="work_inner tiny_mce" id="works-content">
+          <!-- адми опывт работы -->
+        </div>
+      </section>
+    </div>
+
+
+  </main>
+  <script src="jsmain/main.js"></script>
+  <script src="jsmain/api.js"></script>
+  <script src="jsmain/about.js"></script>
+  <script src="jsmain/skills.js"></script>
+  <script src="jsmain/work.js"></script>
+</body>
+
+</html>

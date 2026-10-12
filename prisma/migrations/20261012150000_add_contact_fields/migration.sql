@@ -1,0 +1,3 @@
+﻿-- AlterTable
+ALTER TABLE "About" ADD COLUMN "telefon" TEXT NOT NULL DEFAULT '';
+ALTER TABLE "About" ADD COLUMN "telegram" TEXT NOT NULL DEFAULT '';

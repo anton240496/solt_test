@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+// о себе
+model About {
+  id    Int    @id @default(autoincrement())
+  photo String
+  about String
+  telefon String
+  telegram String
+}
+// группа тегов
+model SkillGroup {
+  id     Int     @id @default(autoincrement())
+  title  String
+  order  Int     @default(0)
+  skills Skill[]
+}
+// сами теги
+model Skill {
+  id      Int        @id @default(autoincrement())
+  name    String
+  order   Int        @default(0)
+  groupId Int
+  // у каждой группы свои теги
+  group   SkillGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+}
+// опыт работы
+model Work {
+  id          Int    @id @default(autoincrement())
+  position    String
+  company     String
+  period      String
+  description String
+  order       Int    @default(0)
+}

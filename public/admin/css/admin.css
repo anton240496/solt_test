@@ -1,0 +1,431 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #88e3cb;
+    color: #000;
+}
+
+/* ─── Табы ─── */
+.admin-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.admin-tab {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    background: #71cde3;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.admin-tab:hover {
+    box-shadow: 0px 4px 4px rgba(22, 170, 207, 0.25);
+    filter: brightness(80%);
+}
+
+.admin-tab--active {
+    filter: brightness(80%);
+}
+
+/* ─── Панели ─── */
+.admin-tab-panel {
+    display: none;
+}
+
+.admin-tab-panel--active {
+    display: block;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    color: #000;
+    background: #88e3cb;
+    border-bottom: 5px solid #71cde3;
+    position: fixed;
+    width: 100%;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.admin-back {
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.admin-back:hover {
+    text-decoration: underline;
+}
+
+.admin-main {
+    padding: 100px 24px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.admin-empty {
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+}
+
+.admin-section {
+    padding: 24px;
+    border-radius: 12px;
+    border: 5px solid #71cde3;
+}
+
+.admin-section h2 {
+    margin: 0 0 16px;
+    font-size: 18px;
+}
+
+.admin-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.admin-field span {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.admin-input {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+}
+
+.admin-field img {
+    width: 200px;
+    height: auto;
+}
+
+.admin-input:focus {
+    outline: none;
+    border-color: #71cde3;
+}
+
+.admin-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-actions--bottom {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 5px solid #71cde3;
+}
+
+/* ─── Стилизованное поле выбора файла ─── */
+.admin-file {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.admin-file__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.admin-file__btn {
+    user-select: none;
+}
+
+.admin-file__name {
+    font-size: 14px;
+    color: #000;
+    max-width: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-btn {
+    padding: 10px 20px;
+    background: #71cde3;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.admin-btn:hover {
+    filter: brightness(80%);
+}
+
+.admin-status {
+    font-size: 14px;
+    color: #000;
+}
+
+.admin-status--ok {
+    color: #0da915;
+}
+
+.admin-status--err {
+    color: #c62828;
+}
+
+.admin-inline-form {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+}
+
+.admin-inline-form .admin-input {
+    flex: 1;
+    min-width: 150px;
+}
+
+.admin-input--narrow {
+    width: 80px;
+    flex: 0 0 auto !important;
+}
+
+.admin-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-list__item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    border: 5px solid #71cde3;
+    cursor: default;
+}
+
+.admin-list__item .admin-input {
+    flex: 1;
+}
+
+.admin-btn--save {
+    background: #71cde3;
+}
+
+.admin-btn--danger {
+    background: #e57373;
+}
+
+.admin-drag-handle {
+    cursor: grab;
+    user-select: none;
+    font-size: 18px;
+    color: #000;
+    padding: 4px 8px;
+    line-height: 1;
+}
+
+.admin-drag-handle:active {
+    cursor: grabbing;
+}
+
+.admin-list__item--ghost {
+    opacity: 0.4;
+    background: #e6f7fb;
+}
+
+.admin-list__item--column {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.admin-list__row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-sublist {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.admin-sublist__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    background: #71cde3;
+    border-radius: 6px;
+}
+
+.admin-sublist__item .admin-input {
+    flex: 1;
+}
+
+.admin-skill {
+    margin-left: 100px;
+}
+
+/* */
+/* СВОРАЧИВАЕМАЯ КАРТОЧКА — ОБЩИЕ КЛАССЫ */
+/*  */
+
+/* ─── Шапка карточки ─── */
+.admin-item__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+}
+
+/* ─── Тело карточки (свёрнутое по умолчанию) ─── */
+.admin-item__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 8px;
+}
+
+.admin-item--open .admin-item__body {
+    padding: 12px 8px 8px;
+}
+
+/* ─── Единый toggle (плюс/крестик) ─── */
+.admin-toggle {
+    cursor: pointer;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 40px;
+    line-height: 1;
+    color: #71cde3;
+    border-radius: 6px;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.admin-toggle>span {
+    display: inline-block;
+    transform-origin: 50% 50%;
+    transition: transform 0.3s ease;
+}
+
+.admin-toggle:hover {
+    filter: brightness(80%);
+}
+
+.admin-item--open .admin-toggle>span {
+    transform: rotate(45deg);
+}
+
+/* ─── Анимации ─── */
+@keyframes workFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-list__item--new {
+    animation: workFadeIn 0.3s ease forwards;
+}
+
+.admin-list__item--removing {
+    opacity: 0;
+    transform: translateX(20px);
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-width: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease,
+        padding 0.3s ease, margin 0.3s ease;
+}
+
+/* ─── Период работы (месяц-год) ─── */
+.admin-period {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.admin-period__item {
+    flex: 1;
+    min-width: 140px;
+}
+
+.admin-period__item span {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #000;
+}
+
+.admin-period__sep {
+    padding-bottom: 10px;
+    color: #000;
+    font-size: 18px;
+}
+
+.admin-period__current {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+}
+
+.admin-period__current input[type="checkbox"] {
+    cursor: pointer;
+}

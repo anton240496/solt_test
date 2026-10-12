@@ -1,0 +1,54 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type About {
+  about: String!
+  id: Int!
+  photo: String!
+  telefon: String!
+  telegram: String!
+}
+
+type Mutation {
+  createSkill(groupId: Int!, name: String!, order: Int): Skill!
+  createSkillGroup(order: Int, title: String!): SkillGroup!
+  createWork(company: String!, description: String!, order: Int, period: String!, position: String!): Work!
+  deleteSkill(id: Int!): Boolean!
+  deleteSkillGroup(id: Int!): Boolean!
+  deleteWork(id: Int!): Boolean!
+  updateAbout(about: String!, photo: String!, telefon: String!, telegram: String!): About!
+  updateSkill(id: Int!, name: String!, order: Int): Skill!
+  updateSkillGroup(id: Int!, order: Int, title: String!): SkillGroup!
+  updateWork(company: String!, description: String!, id: Int!, order: Int, period: String!, position: String!): Work!
+}
+
+type Query {
+  about: About
+  skill: [Skill!]!
+  skillGroups: [SkillGroup!]!
+  works: [Work!]!
+}
+
+type Skill {
+  groupId: Int!
+  id: Int!
+  name: String!
+  order: Int!
+}
+
+type SkillGroup {
+  id: Int!
+  order: Int!
+  skills: [Skill!]!
+  title: String!
+}
+
+type Work {
+  company: String!
+  description: String!
+  id: Int!
+  order: Int!
+  period: String!
+  position: String!
+}
