@@ -18,13 +18,13 @@
 
 ### Сайт и API
 
-# 1. Установить все зависимости (создаст node_modules)  
+## 1. Установить все зависимости (создаст node_modules)  
 npm install
 
-# 2. Сгенерировать Prisma Client (чтобы заработали бд)
+## 2. Сгенерировать Prisma Client (чтобы заработали бд)
 npx prisma generate
 
-# 3. Запустить проект
+## 3. Запустить проект
 npm run start
 
 Сервер: http://localhost:3000
@@ -34,7 +34,7 @@ npm run start
 ### База данных SQLite
 
 ```bash
-npx prisma studio
+npx prisma@6 studio
 ```
 
 Prisma Studio: http://localhost:5555
