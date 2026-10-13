@@ -149,6 +149,10 @@ main {
     border-radius: 20px;
 }
 
+.about_text {
+    word-break: break-all;
+}
+
 .skills {
     margin-top: 50px;
 }
