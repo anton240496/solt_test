@@ -262,10 +262,10 @@ main {
         transition: top 1s ease-in-out;
         flex-direction: column;
         gap: 40px;
-        padding: 20px !impotant;;
+        padding: 20px !important;;
         border-radius: 10px;
-        border: 5px solid #71cde3 !impotant;
-        background-color: #88e3cb !impotant;
+        border: 5px solid #71cde3 !important;
+        background-color: #88e3cb !important;
     }
 
     .menu_list.active {
